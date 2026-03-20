@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendrier - F1 Esport League</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="page-loader">
+    <div class="loader-logo">
+      <span class="logo-f1">F1</span>
+      <span class="logo-esport">ESPORT LEAGUE</span>
+    </div>
+    <div class="loader-track"><div class="loader-car"></div></div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-f1">F1</span>
+        <span class="logo-esport">ESPORT LEAGUE</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="teams.html">Écuries</a></li>
+        <li><a href="calendrier.html" class="active">Calendrier</a></li>
+        <li><a href="classement.html">Classement</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="section-tag">SAISON 2025</div>
+      <h1 class="page-title">CALENDRIER</h1>
+      <p>24 Grands Prix. Chaque course compte.</p>
+    </div>
+    <div class="page-hero-lines">
+      <div class="line l1"></div>
+      <div class="line l2"></div>
+    </div>
+  </section>
+
+  <section class="cal-page">
+    <div class="section-container">
+
+      <div class="cal-filter">
+        <button class="cal-btn active" data-filter="all">Tous</button>
+        <button class="cal-btn" data-filter="done">Terminés</button>
+        <button class="cal-btn" data-filter="upcoming">À venir</button>
+      </div>
+
+      <div class="cal-grid">
+
+        <!-- R01 — AUSTRALIE -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 01</div>
+          <div class="cal-flag">🇦🇺</div>
+          <div class="cal-country">AUSTRALIE</div>
+          <div class="cal-gp">Grand Prix d'Australie</div>
+          <div class="cal-circuit">Albert Park, Melbourne</div>
+          <div class="cal-date">14/03/2025 — 16/03/2025</div>
+          <div class="cal-status next">PROCHAIN</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">14/03/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">14/03/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">15/03/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">15/03/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">15/03/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">15/03/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">16/03/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R02 — CHINE (SPRINT) -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 02 · SPRINT</div>
+          <div class="cal-flag">🇨🇳</div>
+          <div class="cal-country">CHINE</div>
+          <div class="cal-gp">Grand Prix de Chine</div>
+          <div class="cal-circuit">Shanghai International Circuit</div>
+          <div class="cal-date">21/03/2025 — 23/03/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">21/03/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">SPRINT</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">SPRINT QUALIFYING</span><span class="cal-prog-day">21/03/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">SPRINT RACE</span><span class="cal-prog-day">22/03/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">22/03/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">22/03/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">22/03/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">23/03/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R03 — JAPON -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 03</div>
+          <div class="cal-flag">🇯🇵</div>
+          <div class="cal-country">JAPON</div>
+          <div class="cal-gp">Grand Prix du Japon</div>
+          <div class="cal-circuit">Suzuka International Racing Course</div>
+          <div class="cal-date">04/04/2025 — 06/04/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">04/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">04/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">05/04/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">05/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">05/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">05/04/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">06/04/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R04 — BAHREÏN -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 04</div>
+          <div class="cal-flag">🇧🇭</div>
+          <div class="cal-country">BAHREÏN</div>
+          <div class="cal-gp">Grand Prix de Bahreïn</div>
+          <div class="cal-circuit">Circuit International de Bahreïn, Sakhir</div>
+          <div class="cal-date">11/04/2025 — 13/04/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">11/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">11/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">12/04/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">12/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">12/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">12/04/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">13/04/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R05 — ARABIE SAOUDITE -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 05</div>
+          <div class="cal-flag">🇸🇦</div>
+          <div class="cal-country">ARABIE SAOUDITE</div>
+          <div class="cal-gp">Grand Prix d'Arabie Saoudite</div>
+          <div class="cal-circuit">Circuit de la Corniche, Jeddah</div>
+          <div class="cal-date">18/04/2025 — 20/04/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">18/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">18/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">19/04/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">19/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">19/04/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">19/04/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">20/04/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R06 — MIAMI (SPRINT) -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 06 · SPRINT</div>
+          <div class="cal-flag">🇺🇸</div>
+          <div class="cal-country">MIAMI</div>
+          <div class="cal-gp">Grand Prix de Miami</div>
+          <div class="cal-circuit">Miami International Autodrome</div>
+          <div class="cal-date">02/05/2025 — 04/05/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">02/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">SPRINT</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">SPRINT QUALIFYING</span><span class="cal-prog-day">02/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">SPRINT RACE</span><span class="cal-prog-day">03/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">03/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">03/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">03/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">04/05/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R07 — ÉMILIE-ROMAGNE -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 07</div>
+          <div class="cal-flag">🇮🇹</div>
+          <div class="cal-country">ÉMILIE-ROMAGNE</div>
+          <div class="cal-gp">Grand Prix d'Émilie-Romagne</div>
+          <div class="cal-circuit">Autodromo Enzo e Dino Ferrari, Imola</div>
+          <div class="cal-date">16/05/2025 — 18/05/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">16/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">16/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">17/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">17/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">17/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">17/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">18/05/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R08 — MONACO -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 08</div>
+          <div class="cal-flag">🇲🇨</div>
+          <div class="cal-country">MONACO</div>
+          <div class="cal-gp">Grand Prix de Monaco</div>
+          <div class="cal-circuit">Circuit de Monaco, Monte Carlo</div>
+          <div class="cal-date">23/05/2025 — 25/05/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">23/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">23/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">24/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">24/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">24/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">24/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">25/05/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R09 — ESPAGNE -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 09</div>
+          <div class="cal-flag">🇪🇸</div>
+          <div class="cal-country">ESPAGNE</div>
+          <div class="cal-gp">Grand Prix d'Espagne</div>
+          <div class="cal-circuit">Circuit de Barcelona-Catalunya</div>
+          <div class="cal-date">30/05/2025 — 01/06/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">30/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">30/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">31/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">31/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">31/05/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">31/05/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">01/06/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R10 — CANADA -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 10</div>
+          <div class="cal-flag">🇨🇦</div>
+          <div class="cal-country">CANADA</div>
+          <div class="cal-gp">Grand Prix du Canada</div>
+          <div class="cal-circuit">Circuit Gilles Villeneuve, Montréal</div>
+          <div class="cal-date">13/06/2025 — 15/06/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">13/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">13/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">14/06/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">14/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">14/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">14/06/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">15/06/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R11 — AUTRICHE -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 11</div>
+          <div class="cal-flag">🇦🇹</div>
+          <div class="cal-country">AUTRICHE</div>
+          <div class="cal-gp">Grand Prix d'Autriche</div>
+          <div class="cal-circuit">Red Bull Ring, Spielberg</div>
+          <div class="cal-date">27/06/2025 — 29/06/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">27/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">27/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">28/06/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">28/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">28/06/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">28/06/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">29/06/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R12 — GRANDE-BRETAGNE -->
+        <div class="cal-card" data-status="upcoming">
+          <div class="cal-round">ROUND 12</div>
+          <div class="cal-flag">🇬🇧</div>
+          <div class="cal-country">GRANDE-BRETAGNE</div>
+          <div class="cal-gp">Grand Prix de Grande-Bretagne</div>
+          <div class="cal-circuit">Silverstone Circuit</div>
+          <div class="cal-date">04/07/2025 — 06/07/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+          <div class="cal-expand-icon">+</div>
+          <div class="cal-programme">
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">ESSAIS LIBRES / FREE PRACTICE</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP1</span><span class="cal-prog-day">04/07/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP2</span><span class="cal-prog-day">04/07/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">FP3</span><span class="cal-prog-day">05/07/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">QUALIFICATIONS / QUALIFYING</div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q1</span><span class="cal-prog-day">05/07/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q2</span><span class="cal-prog-day">05/07/2025</span></div>
+              <div class="cal-prog-row"><span class="cal-prog-name">Q3</span><span class="cal-prog-day">05/07/2025</span></div>
+            </div>
+            <div class="cal-prog-section">
+              <div class="cal-prog-title">COURSE / RACE</div>
+              <div class="cal-prog-row cal-prog-race"><span class="cal-prog-name">RACE</span><span class="cal-prog-day">06/07/2025</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESTE DE LA SAISON -->
+        <div class="cal-card tba" data-status="upcoming">
+          <div class="cal-round">ROUNDS 13 — 24</div>
+          <div class="cal-flag">🌍</div>
+          <div class="cal-country">RESTE DE LA SAISON</div>
+          <div class="cal-gp">Calendrier complet à venir</div>
+          <div class="cal-circuit">Belgique (Sprint) · Hongrie · Pays-Bas · Italie · Azerbaïdjan · Singapour · Austin (Sprint) · Mexique · São Paulo (Sprint) · Las Vegas · Qatar (Sprint) · Abu Dhabi</div>
+          <div class="cal-date">25/07/2025 — 07/12/2025</div>
+          <div class="cal-status upcoming">À VENIR</div>
+          <div class="cal-winner-block">
+            <div class="cal-winner-label">VAINQUEUR</div>
+            <div class="cal-winner-val">—</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" title="Retour en haut">↑</button>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-f1">F1</span>
+          <span class="logo-esport">ESPORT LEAGUE</span>
+        </div>
+        <p>La ligue esport F1 la plus compétitive.</p>
+      </div>
+      <div class="footer-links">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="teams.html">Écuries</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="classement.html">Classement</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>NOUS REJOINDRE</h4>
+        <div class="social-links">
+          <a href="#" class="social-btn discord">Discord</a>
+          <a href="#" class="social-btn twitter">Twitter / X</a>
+          <a href="#" class="social-btn twitch">Twitch</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 F1 Esport League. Tous droits réservés.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/player.js"></script>
+  <script>
+    // Filter buttons
+    document.querySelectorAll('.cal-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cal-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.cal-card').forEach(card => {
+          if (filter === 'all' || card.dataset.status === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Expand programme on click
+    document.querySelectorAll('.cal-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

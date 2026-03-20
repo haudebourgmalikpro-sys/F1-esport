@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python3:*)",
+      "Bash(for f:*)",
+      "Bash(do grep:*)",
+      "Bash(sed -i 's|<meta name=\"\"viewport\"\"|<link rel=\"\"icon\"\" type=\"\"image/svg+xml\"\" href=\"\"assets/favicon.svg\"\" />\\\\n  <meta name=\"\"viewport\"\"|' \"$f\")",
+      "Bash(done)",
+      "WebSearch",
+      "WebFetch(domain:f1calendar.com)",
+      "WebFetch(domain:www.motorsport.com)",
+      "Bash(ls \"C:\\\\Users\\\\haude\\\\Pictures\\\\taff\\\\F1\\\\music\"\" 2>/dev/null || ls \"/c/Users/haude/Pictures/taff/F1/music/\" 2>/dev/null || dir \"C:\\\\Users\\\\haude\\\\Pictures\\\\taff\\\\F1\\\\music\\\\\")"
+    ]
+  }
+}
