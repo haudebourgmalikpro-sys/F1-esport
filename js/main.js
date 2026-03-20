@@ -6,7 +6,11 @@
 window.addEventListener('load', () => {
   const loader = document.querySelector('.page-loader');
   if (loader) {
-    setTimeout(() => loader.classList.add('loaded'), 400);
+    // Long loader (3-7s) seulement à la première visite, rapide ensuite
+    const alreadyVisited = sessionStorage.getItem('f1_visited');
+    const delay = alreadyVisited ? 400 : Math.floor(Math.random() * 4001) + 3000;
+    if (!alreadyVisited) sessionStorage.setItem('f1_visited', '1');
+    setTimeout(() => loader.classList.add('loaded'), delay);
   }
 });
 

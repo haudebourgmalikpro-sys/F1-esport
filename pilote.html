@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Écuries - F1 Esport League</title>
+  <title>Pilote - F1 Esport League</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,39 +35,18 @@
       <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="teams.html">Écuries</a></li>
-        <li><a href="pilotes.html">Pilotes</a></li>
+        <li><a href="pilotes.html" class="active">Pilotes</a></li>
         <li><a href="calendrier.html">Calendrier</a></li>
         <li><a href="classement.html">Classement</a></li>
         <li><a href="actualites.html">Actualités</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-content">
-      <div class="section-tag">SAISON 2026</div>
-      <h1 class="page-title">LES ÉCURIES</h1>
-      <p>11 équipes. 22 pilotes. Une seule ligue.</p>
-    </div>
-    <div class="page-hero-lines">
-      <div class="line l1"></div>
-      <div class="line l2"></div>
-    </div>
-  </section>
-
-  <!-- TEAMS GRID -->
-  <section class="teams-page">
-    <div class="section-container">
-      <div class="teams-full-grid" id="teamsGrid">
-        <!-- Généré par JS -->
-      </div>
-    </div>
-  </section>
+  <!-- CONTENT -->
+  <div id="piloteContent"></div>
 
   <!-- BACK TO TOP -->
   <button class="back-to-top" title="Retour en haut">↑</button>
@@ -86,9 +66,11 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="teams.html">Écuries</a></li>
-        <li><a href="pilotes.html">Pilotes</a></li>
+          <li><a href="pilotes.html">Pilotes</a></li>
           <li><a href="calendrier.html">Calendrier</a></li>
           <li><a href="classement.html">Classement</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-social">
@@ -106,52 +88,8 @@
   </footer>
 
   <script src="js/teams-data.js"></script>
+  <script src="js/pilote.js"></script>
   <script src="js/main.js"></script>
   <script src="js/player.js"></script>
-  <script>
-    const grid = document.getElementById('teamsGrid');
-    TEAMS.forEach(team => {
-      const card = document.createElement('a');
-      card.href = `team.html?id=${team.id}`;
-      card.className = 'team-full-card';
-      card.style.setProperty('--tc', team.color);
-      card.style.display = 'block';
-      card.style.textDecoration = 'none';
-      card.style.color = 'inherit';
-      card.innerHTML = `
-        <div class="tfc-accent"></div>
-        <div class="tfc-header">
-          <div class="tfc-number">${String(team.id).padStart(2,'0')}</div>
-          <div class="logo-box">
-            ${team.logo
-              ? `<img src="${team.logo}" alt="${team.name}" style="width:100%;height:100%;object-fit:contain;" />`
-              : `<span>LOGO</span>`
-            }
-          </div>
-        </div>
-        <div class="tfc-body">
-          <div class="tfc-name">${team.name}</div>
-          <div class="tfc-tag">${team.shortName}</div>
-          <div class="tfc-drivers">
-            <div class="tfc-driver">
-              <span class="driver-num">#${team.drivers[0].number}</span>
-              <span class="driver-name">${team.drivers[0].name}</span>
-            </div>
-            <div class="tfc-driver">
-              <span class="driver-num">#${team.drivers[1].number}</span>
-              <span class="driver-name">${team.drivers[1].name}</span>
-            </div>
-          </div>
-          <div class="tfc-stats">
-            <div class="tfc-stat"><span>Points</span><strong>${team.teamStats.totalPoints}</strong></div>
-            <div class="tfc-stat"><span>Victoires</span><strong>${team.teamStats.wins}</strong></div>
-            <div class="tfc-stat"><span>Podiums</span><strong>${team.teamStats.podiums}</strong></div>
-          </div>
-          <div style="margin-top:1rem;font-family:var(--font-main);font-size:0.7rem;letter-spacing:2px;color:var(--tc);font-weight:700;">VOIR L'ÉCURIE →</div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-  </script>
 </body>
 </html>

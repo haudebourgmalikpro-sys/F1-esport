@@ -16,7 +16,9 @@
       "Bash(sed -i 's/font-size: 0\\\\.65rem/font-size: 0.8rem/g' style.css pages.css team.css)",
       "Bash(sed -i 's/font-size: 0\\\\.7rem/font-size: 0.85rem/g' style.css pages.css team.css)",
       "Bash(sed -i 's/font-size: 0\\\\.75rem/font-size: 0.9rem/g' style.css pages.css team.css)",
-      "Bash(do sed:*)"
+      "Bash(do sed:*)",
+      "Bash(echo \"$f: already has Pilotes in footer or nav\")",
+      "Bash(echo \"$f: MISSING\")"
     ]
   }
 }
