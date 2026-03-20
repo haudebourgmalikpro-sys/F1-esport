@@ -10,7 +10,13 @@
       "WebSearch",
       "WebFetch(domain:f1calendar.com)",
       "WebFetch(domain:www.motorsport.com)",
-      "Bash(ls \"C:\\\\Users\\\\haude\\\\Pictures\\\\taff\\\\F1\\\\music\"\" 2>/dev/null || ls \"/c/Users/haude/Pictures/taff/F1/music/\" 2>/dev/null || dir \"C:\\\\Users\\\\haude\\\\Pictures\\\\taff\\\\F1\\\\music\\\\\")"
+      "Bash(ls \"C:\\\\Users\\\\haude\\\\Pictures\\\\taff\\\\F1\\\\music\"\" 2>/dev/null || ls \"/c/Users/haude/Pictures/taff/F1/music/\" 2>/dev/null || dir \"C:\\\\Users\\\\haude\\\\Pictures\\\\taff\\\\F1\\\\music\\\\\")",
+      "Bash(sed -i 's/font-size: 0\\\\.55rem/font-size: 0.75rem/g' style.css pages.css team.css)",
+      "Bash(sed -i 's/font-size: 0\\\\.6rem/font-size: 0.8rem/g' style.css pages.css team.css)",
+      "Bash(sed -i 's/font-size: 0\\\\.65rem/font-size: 0.8rem/g' style.css pages.css team.css)",
+      "Bash(sed -i 's/font-size: 0\\\\.7rem/font-size: 0.85rem/g' style.css pages.css team.css)",
+      "Bash(sed -i 's/font-size: 0\\\\.75rem/font-size: 0.9rem/g' style.css pages.css team.css)",
+      "Bash(do sed:*)"
     ]
   }
 }

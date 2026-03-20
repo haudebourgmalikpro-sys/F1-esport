@@ -36,6 +36,7 @@
         <li><a href="teams.html">Écuries</a></li>
         <li><a href="calendrier.html">Calendrier</a></li>
         <li><a href="classement.html">Classement</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle">
@@ -55,7 +56,7 @@
       </div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge">SAISON 2025</div>
+      <div class="hero-badge">SAISON 2026</div>
       <h1 class="hero-title">
         <span class="title-small">BIENVENUE DANS LA</span>
         <span class="title-big">F1 ESPORT</span>
@@ -94,7 +95,7 @@
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <span class="stat-number" data-target="2025">0</span>
+        <span class="stat-number" data-target="2026">0</span>
         <span class="stat-label">Saison</span>
       </div>
     </div>
@@ -144,6 +145,61 @@
       <div class="teams-preview-grid" id="featuredTeams"></div>
       <div class="teams-cta">
         <a href="teams.html" class="btn btn-primary">Voir toutes les écuries →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTUALITÉS -->
+  <section class="news-section" id="actualites">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-tag">ACTUALITÉS</div>
+        <h2 class="section-title">DERNIÈRES INFOS</h2>
+        <p class="section-desc">Toute l'actualité de la ligue : transferts, résultats, analyses et coulisses.</p>
+      </div>
+      <div class="news-grid">
+        <a href="actualites.html" class="news-card news-card-featured">
+          <div class="news-img" style="background-image:url('assets/news/placeholder.jpg');">
+            <div class="news-badge">À LA UNE</div>
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-date">20/03/2026</span>
+              <span class="news-cat">OFFICIEL</span>
+            </div>
+            <h3 class="news-title">La saison 2026 arrive — Tout ce qu'il faut savoir</h3>
+            <p class="news-excerpt">24 Grands Prix, 11 écuries, de nouveaux pilotes... La saison la plus intense de notre ligue est sur le point de démarrer. Découvrez toutes les infos.</p>
+          </div>
+        </a>
+        <a href="actualites.html" class="news-card">
+          <div class="news-img" style="background-image:url('assets/news/placeholder2.jpg');">
+            <div class="news-badge">TRANSFERTS</div>
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-date">18/03/2026</span>
+              <span class="news-cat">MERCATO</span>
+            </div>
+            <h3 class="news-title">Mercato : les derniers mouvements avant la saison</h3>
+            <p class="news-excerpt">Plusieurs écuries ont finalisé leur line-up pour 2026. Récap de tous les transferts confirmés.</p>
+          </div>
+        </a>
+        <a href="actualites.html" class="news-card">
+          <div class="news-img" style="background-image:url('assets/news/placeholder3.jpg');">
+            <div class="news-badge">ANALYSE</div>
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-date">15/03/2026</span>
+              <span class="news-cat">ANALYSE</span>
+            </div>
+            <h3 class="news-title">Qui sont les favoris pour le titre cette saison ?</h3>
+            <p class="news-excerpt">On passe en revue les forces en présence et les équipes à surveiller cette année.</p>
+          </div>
+        </a>
+      </div>
+      <div class="teams-cta" style="margin-top:2rem;">
+        <a href="actualites.html" class="btn btn-primary">Toutes les actualités →</a>
       </div>
     </div>
   </section>
@@ -243,7 +299,7 @@
   <!-- CTA REJOINDRE -->
   <section class="cta-section">
     <div class="section-container" style="text-align:center;">
-      <div class="section-tag">SAISON 2025</div>
+      <div class="section-tag">SAISON 2026</div>
       <h2 class="section-title">REJOINS LA LIGUE</h2>
       <p class="section-desc" style="margin-bottom:2.5rem;">
         Tu es pilote et tu veux prouver que tu es le meilleur ? Rejoins notre communauté sur Discord et inscris-toi pour la prochaine saison.
@@ -288,7 +344,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 F1 Esport League. Tous droits réservés.</span>
+      <span>© 2026 F1 Esport League. Tous droits réservés.</span>
     </div>
   </footer>
 
@@ -354,30 +410,30 @@
 
     // --- CALENDRIER DES COURSES (start = vendredi, end = dimanche soir) ---
     const RACES = [
-      { round: 'R01', gp: "GRAND PRIX D'AUSTRALIE", circuit: 'Albert Park, Melbourne', flag: '🇦🇺', start: '2025-03-14', end: '2025-03-16' },
-      { round: 'R02', gp: 'GRAND PRIX DE CHINE', circuit: 'Shanghai International Circuit', flag: '🇨🇳', start: '2025-03-21', end: '2025-03-23' },
-      { round: 'R03', gp: 'GRAND PRIX DU JAPON', circuit: 'Suzuka Circuit', flag: '🇯🇵', start: '2025-04-04', end: '2025-04-06' },
-      { round: 'R04', gp: 'GRAND PRIX DE BAHREÏN', circuit: 'Bahrain International Circuit', flag: '🇧🇭', start: '2025-04-11', end: '2025-04-13' },
-      { round: 'R05', gp: "GRAND PRIX D'ARABIE SAOUDITE", circuit: 'Jeddah Corniche Circuit', flag: '🇸🇦', start: '2025-04-18', end: '2025-04-20' },
-      { round: 'R06', gp: 'GRAND PRIX DE MIAMI', circuit: 'Miami International Autodrome', flag: '🇺🇸', start: '2025-05-02', end: '2025-05-04' },
-      { round: 'R07', gp: "GRAND PRIX D'ÉMILIE-ROMAGNE", circuit: 'Autodromo Enzo e Dino Ferrari, Imola', flag: '🇮🇹', start: '2025-05-16', end: '2025-05-18' },
-      { round: 'R08', gp: 'GRAND PRIX DE MONACO', circuit: 'Circuit de Monaco', flag: '🇲🇨', start: '2025-05-23', end: '2025-05-25' },
-      { round: 'R09', gp: "GRAND PRIX D'ESPAGNE", circuit: 'Circuit de Barcelona-Catalunya', flag: '🇪🇸', start: '2025-05-30', end: '2025-06-01' },
-      { round: 'R10', gp: 'GRAND PRIX DU CANADA', circuit: 'Circuit Gilles-Villeneuve, Montréal', flag: '🇨🇦', start: '2025-06-13', end: '2025-06-15' },
-      { round: 'R11', gp: "GRAND PRIX D'AUTRICHE", circuit: 'Red Bull Ring, Spielberg', flag: '🇦🇹', start: '2025-06-27', end: '2025-06-29' },
-      { round: 'R12', gp: 'GRAND PRIX DE GRANDE-BRETAGNE', circuit: 'Silverstone Circuit', flag: '🇬🇧', start: '2025-07-04', end: '2025-07-06' },
-      { round: 'R13', gp: 'GRAND PRIX DE BELGIQUE', circuit: 'Circuit de Spa-Francorchamps', flag: '🇧🇪', start: '2025-07-25', end: '2025-07-27' },
-      { round: 'R14', gp: 'GRAND PRIX DE HONGRIE', circuit: 'Hungaroring, Budapest', flag: '🇭🇺', start: '2025-08-01', end: '2025-08-03' },
-      { round: 'R15', gp: 'GRAND PRIX DE PAYS-BAS', circuit: 'Circuit Zandvoort', flag: '🇳🇱', start: '2025-08-29', end: '2025-08-31' },
-      { round: 'R16', gp: "GRAND PRIX D'ITALIE", circuit: 'Autodromo Nazionale Monza', flag: '🇮🇹', start: '2025-09-05', end: '2025-09-07' },
-      { round: 'R17', gp: "GRAND PRIX D'AZERBAÏDJAN", circuit: 'Baku City Circuit', flag: '🇦🇿', start: '2025-09-19', end: '2025-09-21' },
-      { round: 'R18', gp: 'GRAND PRIX DE SINGAPOUR', circuit: 'Marina Bay Street Circuit', flag: '🇸🇬', start: '2025-10-03', end: '2025-10-05' },
-      { round: 'R19', gp: 'GRAND PRIX DES ÉTATS-UNIS', circuit: 'Circuit of the Americas, Austin', flag: '🇺🇸', start: '2025-10-17', end: '2025-10-19' },
-      { round: 'R20', gp: 'GRAND PRIX DU MEXIQUE', circuit: 'Autódromo Hermanos Rodríguez', flag: '🇲🇽', start: '2025-10-24', end: '2025-10-26' },
-      { round: 'R21', gp: 'GRAND PRIX DU BRÉSIL', circuit: 'Autódromo José Carlos Pace, Interlagos', flag: '🇧🇷', start: '2025-11-07', end: '2025-11-09' },
-      { round: 'R22', gp: 'GRAND PRIX DE LAS VEGAS', circuit: 'Las Vegas Strip Circuit', flag: '🇺🇸', start: '2025-11-20', end: '2025-11-22' },
-      { round: 'R23', gp: 'GRAND PRIX DU QATAR', circuit: 'Lusail International Circuit', flag: '🇶🇦', start: '2025-11-28', end: '2025-11-30' },
-      { round: 'R24', gp: "GRAND PRIX D'ABU DHABI", circuit: 'Yas Marina Circuit', flag: '🇦🇪', start: '2025-12-05', end: '2025-12-07' },
+      { round: 'R01', gp: "GRAND PRIX D'AUSTRALIE", circuit: 'Albert Park, Melbourne', flag: '🇦🇺', start: '2026-05-01', end: '2026-05-03' },
+      { round: 'R02', gp: 'GRAND PRIX DE CHINE', circuit: 'Shanghai International Circuit', flag: '🇨🇳', start: '2026-05-08', end: '2026-05-10' },
+      { round: 'R03', gp: 'GRAND PRIX DU JAPON', circuit: 'Suzuka Circuit', flag: '🇯🇵', start: '2026-05-22', end: '2026-05-24' },
+      { round: 'R04', gp: 'GRAND PRIX DE BAHREÏN', circuit: 'Bahrain International Circuit', flag: '🇧🇭', start: '2026-05-29', end: '2026-05-31' },
+      { round: 'R05', gp: "GRAND PRIX D'ARABIE SAOUDITE", circuit: 'Jeddah Corniche Circuit', flag: '🇸🇦', start: '2026-06-05', end: '2026-06-07' },
+      { round: 'R06', gp: 'GRAND PRIX DE MIAMI', circuit: 'Miami International Autodrome', flag: '🇺🇸', start: '2026-06-19', end: '2026-06-21' },
+      { round: 'R07', gp: "GRAND PRIX D'ÉMILIE-ROMAGNE", circuit: 'Autodromo Enzo e Dino Ferrari, Imola', flag: '🇮🇹', start: '2026-06-26', end: '2026-06-28' },
+      { round: 'R08', gp: 'GRAND PRIX DE MONACO', circuit: 'Circuit de Monaco', flag: '🇲🇨', start: '2026-07-03', end: '2026-07-05' },
+      { round: 'R09', gp: "GRAND PRIX D'ESPAGNE", circuit: 'Circuit de Barcelona-Catalunya', flag: '🇪🇸', start: '2026-07-10', end: '2026-07-12' },
+      { round: 'R10', gp: 'GRAND PRIX DU CANADA', circuit: 'Circuit Gilles-Villeneuve, Montréal', flag: '🇨🇦', start: '2026-07-24', end: '2026-07-26' },
+      { round: 'R11', gp: "GRAND PRIX D'AUTRICHE", circuit: 'Red Bull Ring, Spielberg', flag: '🇦🇹', start: '2026-07-31', end: '2026-08-02' },
+      { round: 'R12', gp: 'GRAND PRIX DE GRANDE-BRETAGNE', circuit: 'Silverstone Circuit', flag: '🇬🇧', start: '2026-08-07', end: '2026-08-09' },
+      { round: 'R13', gp: 'GRAND PRIX DE BELGIQUE', circuit: 'Circuit de Spa-Francorchamps', flag: '🇧🇪', start: '2026-08-28', end: '2026-08-30' },
+      { round: 'R14', gp: 'GRAND PRIX DE HONGRIE', circuit: 'Hungaroring, Budapest', flag: '🇭🇺', start: '2026-09-04', end: '2026-09-06' },
+      { round: 'R15', gp: 'GRAND PRIX DE PAYS-BAS', circuit: 'Circuit Zandvoort', flag: '🇳🇱', start: '2026-09-18', end: '2026-09-20' },
+      { round: 'R16', gp: "GRAND PRIX D'ITALIE", circuit: 'Autodromo Nazionale Monza', flag: '🇮🇹', start: '2026-09-25', end: '2026-09-27' },
+      { round: 'R17', gp: "GRAND PRIX D'AZERBAÏDJAN", circuit: 'Baku City Circuit', flag: '🇦🇿', start: '2026-10-09', end: '2026-10-11' },
+      { round: 'R18', gp: 'GRAND PRIX DE SINGAPOUR', circuit: 'Marina Bay Street Circuit', flag: '🇸🇬', start: '2026-10-16', end: '2026-10-18' },
+      { round: 'R19', gp: 'GRAND PRIX DES ÉTATS-UNIS', circuit: 'Circuit of the Americas, Austin', flag: '🇺🇸', start: '2026-10-30', end: '2026-11-01' },
+      { round: 'R20', gp: 'GRAND PRIX DU MEXIQUE', circuit: 'Autódromo Hermanos Rodríguez', flag: '🇲🇽', start: '2026-11-06', end: '2026-11-08' },
+      { round: 'R21', gp: 'GRAND PRIX DU BRÉSIL', circuit: 'Autódromo José Carlos Pace, Interlagos', flag: '🇧🇷', start: '2026-11-20', end: '2026-11-22' },
+      { round: 'R22', gp: 'GRAND PRIX DE LAS VEGAS', circuit: 'Las Vegas Strip Circuit', flag: '🇺🇸', start: '2026-12-04', end: '2026-12-06' },
+      { round: 'R23', gp: 'GRAND PRIX DU QATAR', circuit: 'Lusail International Circuit', flag: '🇶🇦', start: '2026-12-11', end: '2026-12-13' },
+      { round: 'R24', gp: "GRAND PRIX D'ABU DHABI", circuit: 'Yas Marina Circuit', flag: '🇦🇪', start: '2026-12-18', end: '2026-12-20' },
     ];
 
     function fmtDate(d) {

@@ -351,7 +351,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 .hero-badge {
   display: inline-block;
   font-family: var(--font-main);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 4px;
   color: var(--accent-red);
@@ -408,7 +408,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
   gap: 8px;
   color: var(--text-grey);
   font-family: var(--font-main);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 3px;
   z-index: 1;
 }
@@ -453,7 +453,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .stat-label {
   font-family: var(--font-main);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   letter-spacing: 3px;
   font-weight: 600;
   color: rgba(255,255,255,0.7);
@@ -479,7 +479,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 .section-header.left { text-align: left; }
 .section-tag {
   font-family: var(--font-main);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 5px;
   color: var(--accent-red);
@@ -558,7 +558,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .team-status {
   font-family: var(--font-main);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 3px;
   color: var(--team-color);
@@ -617,13 +617,13 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .date-month {
   font-family: var(--font-main);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   letter-spacing: 2px;
   color: var(--text-grey);
 }
 .race-status {
   font-family: var(--font-main);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 2px;
   padding: 5px 12px;
@@ -793,7 +793,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
   align-items: center;
   justify-content: center;
   font-family: var(--font-main);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   color: var(--text-grey);
   flex-shrink: 0;
@@ -810,7 +810,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .tfc-tag {
   font-family: var(--font-main);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 3px;
   color: var(--tc);
   font-weight: 700;
@@ -852,7 +852,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
   flex: 1;
 }
 .tfc-stat span {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: var(--text-grey);
   font-family: var(--font-main);
   letter-spacing: 2px;
@@ -885,7 +885,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 .countdown-info { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .countdown-tag {
   font-family: var(--font-main);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 4px;
   color: var(--accent-red);
@@ -928,7 +928,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .cd-label {
   font-family: var(--font-main);
-  font-size: 0.55rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 3px;
   color: var(--text-grey);
@@ -994,7 +994,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 .footer-links h4,
 .footer-social h4 {
   font-family: var(--font-main);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   letter-spacing: 4px;
   color: var(--text-grey);
   margin-bottom: 1.5rem;
@@ -1069,7 +1069,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .toast-label {
   font-family: var(--font-main);
-  font-size: 0.55rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 3px;
   color: var(--accent-red);
@@ -1083,7 +1083,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .toast-artist {
   font-family: var(--font-main);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   color: var(--text-grey);
 }
 
@@ -1175,7 +1175,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .player-artist {
   font-family: var(--font-main);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   color: var(--text-grey);
   letter-spacing: 1px;
 }
@@ -1188,7 +1188,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
 }
 .player-time {
   font-family: var(--font-main);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--text-grey);
@@ -1320,5 +1320,5 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
   .section-container { padding: 3rem 1rem; }
   .footer-container { padding: 2.5rem 1rem; }
   .stat-number { font-size: 1.8rem; }
-  .stat-label { font-size: 0.65rem; }
+  .stat-label { font-size: 0.8rem; }
 }
