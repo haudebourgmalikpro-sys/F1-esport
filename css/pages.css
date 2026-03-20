@@ -491,3 +491,104 @@
   #tab-ecurie .class-row { grid-template-columns: 50px 1fr 60px; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+/* ===========================
+   ACTUALITÉS PAGE
+   =========================== */
+
+.news-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.news-page-grid .news-card-hero {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  min-height: 340px;
+}
+
+.news-page-grid .news-card-hero .news-img {
+  min-height: 340px;
+}
+
+.news-page-grid .news-card-hero .news-title {
+  font-size: 1.8rem;
+}
+
+.news-page-grid .news-card-hero .news-excerpt {
+  font-size: 1rem;
+}
+
+.news-page-grid .news-card-hero .news-body {
+  padding: 2rem;
+  justify-content: center;
+}
+
+/* Filter bar */
+.news-filter {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.news-filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border, #1a1a1a);
+  color: var(--text-grey);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.news-filter-btn:hover,
+.news-filter-btn.active {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: white;
+}
+
+/* Empty state */
+.news-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-grey);
+}
+
+.news-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.news-empty h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.news-empty p {
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .news-page-grid { grid-template-columns: repeat(2, 1fr); }
+  .news-page-grid .news-card-hero { grid-template-columns: 1fr; }
+  .news-page-grid .news-card-hero .news-img { min-height: 220px; }
+}
+
+@media (max-width: 768px) {
+  .news-page-grid { grid-template-columns: 1fr; }
+}

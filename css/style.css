@@ -1322,3 +1322,121 @@ html { scrollbar-width: thin; scrollbar-color: var(--accent-red) var(--bg-dark);
   .stat-number { font-size: 1.8rem; }
   .stat-label { font-size: 0.8rem; }
 }
+
+/* ===========================
+   NEWS / ACTUALITÉS SECTION
+   =========================== */
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.news-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border, #1a1a1a);
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-white);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-red);
+  box-shadow: 0 8px 30px rgba(212, 36, 59, 0.15);
+}
+
+.news-card-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.news-card-featured .news-img {
+  min-height: 280px;
+}
+
+.news-img {
+  min-height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-card2);
+  position: relative;
+}
+
+.news-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--accent-red);
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  letter-spacing: 0.05em;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.news-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.news-date {
+  color: var(--text-grey);
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.news-cat {
+  color: var(--accent-red);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.news-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.news-card-featured .news-title {
+  font-size: 1.6rem;
+}
+
+.news-excerpt {
+  color: var(--text-grey);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+  .news-card-featured {
+    grid-template-columns: 1fr;
+  }
+  .news-card-featured .news-img {
+    min-height: 200px;
+  }
+}
