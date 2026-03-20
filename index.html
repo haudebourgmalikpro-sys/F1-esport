@@ -104,10 +104,10 @@
   <section class="countdown-section">
     <div class="countdown-inner">
       <div class="countdown-info">
-        <div class="countdown-tag">PROCHAINE COURSE</div>
-        <div class="countdown-flag">🇦🇺</div>
-        <div class="countdown-gp">GRAND PRIX D'AUSTRALIE</div>
-        <div class="countdown-circuit">Albert Park, Melbourne — R01 — 16/03/2025</div>
+        <div class="countdown-tag" id="cd-tag">PROCHAINE COURSE</div>
+        <div class="countdown-flag" id="cd-flag">🏁</div>
+        <div class="countdown-gp" id="cd-gp">—</div>
+        <div class="countdown-circuit" id="cd-circuit">—</div>
       </div>
       <div class="countdown-timer" id="countdown">
         <div class="cd-block">
@@ -352,26 +352,117 @@
       standingEcuries.appendChild(item);
     });
 
-    // --- COUNTDOWN ---
-    const raceDate = new Date('2025-03-16T04:00:00');
+    // --- CALENDRIER DES COURSES (start = vendredi, end = dimanche soir) ---
+    const RACES = [
+      { round: 'R01', gp: "GRAND PRIX D'AUSTRALIE", circuit: 'Albert Park, Melbourne', flag: '🇦🇺', start: '2025-03-14', end: '2025-03-16' },
+      { round: 'R02', gp: 'GRAND PRIX DE CHINE', circuit: 'Shanghai International Circuit', flag: '🇨🇳', start: '2025-03-21', end: '2025-03-23' },
+      { round: 'R03', gp: 'GRAND PRIX DU JAPON', circuit: 'Suzuka Circuit', flag: '🇯🇵', start: '2025-04-04', end: '2025-04-06' },
+      { round: 'R04', gp: 'GRAND PRIX DE BAHREÏN', circuit: 'Bahrain International Circuit', flag: '🇧🇭', start: '2025-04-11', end: '2025-04-13' },
+      { round: 'R05', gp: "GRAND PRIX D'ARABIE SAOUDITE", circuit: 'Jeddah Corniche Circuit', flag: '🇸🇦', start: '2025-04-18', end: '2025-04-20' },
+      { round: 'R06', gp: 'GRAND PRIX DE MIAMI', circuit: 'Miami International Autodrome', flag: '🇺🇸', start: '2025-05-02', end: '2025-05-04' },
+      { round: 'R07', gp: "GRAND PRIX D'ÉMILIE-ROMAGNE", circuit: 'Autodromo Enzo e Dino Ferrari, Imola', flag: '🇮🇹', start: '2025-05-16', end: '2025-05-18' },
+      { round: 'R08', gp: 'GRAND PRIX DE MONACO', circuit: 'Circuit de Monaco', flag: '🇲🇨', start: '2025-05-23', end: '2025-05-25' },
+      { round: 'R09', gp: "GRAND PRIX D'ESPAGNE", circuit: 'Circuit de Barcelona-Catalunya', flag: '🇪🇸', start: '2025-05-30', end: '2025-06-01' },
+      { round: 'R10', gp: 'GRAND PRIX DU CANADA', circuit: 'Circuit Gilles-Villeneuve, Montréal', flag: '🇨🇦', start: '2025-06-13', end: '2025-06-15' },
+      { round: 'R11', gp: "GRAND PRIX D'AUTRICHE", circuit: 'Red Bull Ring, Spielberg', flag: '🇦🇹', start: '2025-06-27', end: '2025-06-29' },
+      { round: 'R12', gp: 'GRAND PRIX DE GRANDE-BRETAGNE', circuit: 'Silverstone Circuit', flag: '🇬🇧', start: '2025-07-04', end: '2025-07-06' },
+      { round: 'R13', gp: 'GRAND PRIX DE BELGIQUE', circuit: 'Circuit de Spa-Francorchamps', flag: '🇧🇪', start: '2025-07-25', end: '2025-07-27' },
+      { round: 'R14', gp: 'GRAND PRIX DE HONGRIE', circuit: 'Hungaroring, Budapest', flag: '🇭🇺', start: '2025-08-01', end: '2025-08-03' },
+      { round: 'R15', gp: 'GRAND PRIX DE PAYS-BAS', circuit: 'Circuit Zandvoort', flag: '🇳🇱', start: '2025-08-29', end: '2025-08-31' },
+      { round: 'R16', gp: "GRAND PRIX D'ITALIE", circuit: 'Autodromo Nazionale Monza', flag: '🇮🇹', start: '2025-09-05', end: '2025-09-07' },
+      { round: 'R17', gp: "GRAND PRIX D'AZERBAÏDJAN", circuit: 'Baku City Circuit', flag: '🇦🇿', start: '2025-09-19', end: '2025-09-21' },
+      { round: 'R18', gp: 'GRAND PRIX DE SINGAPOUR', circuit: 'Marina Bay Street Circuit', flag: '🇸🇬', start: '2025-10-03', end: '2025-10-05' },
+      { round: 'R19', gp: 'GRAND PRIX DES ÉTATS-UNIS', circuit: 'Circuit of the Americas, Austin', flag: '🇺🇸', start: '2025-10-17', end: '2025-10-19' },
+      { round: 'R20', gp: 'GRAND PRIX DU MEXIQUE', circuit: 'Autódromo Hermanos Rodríguez', flag: '🇲🇽', start: '2025-10-24', end: '2025-10-26' },
+      { round: 'R21', gp: 'GRAND PRIX DU BRÉSIL', circuit: 'Autódromo José Carlos Pace, Interlagos', flag: '🇧🇷', start: '2025-11-07', end: '2025-11-09' },
+      { round: 'R22', gp: 'GRAND PRIX DE LAS VEGAS', circuit: 'Las Vegas Strip Circuit', flag: '🇺🇸', start: '2025-11-20', end: '2025-11-22' },
+      { round: 'R23', gp: 'GRAND PRIX DU QATAR', circuit: 'Lusail International Circuit', flag: '🇶🇦', start: '2025-11-28', end: '2025-11-30' },
+      { round: 'R24', gp: "GRAND PRIX D'ABU DHABI", circuit: 'Yas Marina Circuit', flag: '🇦🇪', start: '2025-12-05', end: '2025-12-07' },
+    ];
+
+    function fmtDate(d) {
+      return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + d.getFullYear();
+    }
+
     function updateCountdown() {
       const now = new Date();
-      const diff = raceDate - now;
-      if (diff <= 0) {
+      const tagEl = document.getElementById('cd-tag');
+      const flagEl = document.getElementById('cd-flag');
+      const gpEl = document.getElementById('cd-gp');
+      const circuitEl = document.getElementById('cd-circuit');
+      const timerEl = document.getElementById('countdown');
+
+      // Find next or current race
+      let race = null;
+      let isLive = false;
+      for (const r of RACES) {
+        const start = new Date(r.start + 'T00:00:00');
+        const end = new Date(r.end + 'T23:59:59');
+        if (now >= start && now <= end) {
+          race = r; isLive = true; break;
+        }
+        if (now < start) {
+          race = r; break;
+        }
+      }
+
+      if (!race) {
+        // Season is over
+        tagEl.textContent = 'SAISON TERMINÉE';
+        flagEl.textContent = '🏁';
+        gpEl.textContent = 'RENDEZ-VOUS LA SAISON PROCHAINE';
+        circuitEl.textContent = '';
         document.getElementById('cd-days').textContent = '00';
         document.getElementById('cd-hours').textContent = '00';
         document.getElementById('cd-mins').textContent = '00';
         document.getElementById('cd-secs').textContent = '00';
         return;
       }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-      document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-      document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-      document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+
+      // Update race info
+      flagEl.textContent = race.flag;
+      gpEl.textContent = race.gp;
+      const raceEnd = new Date(race.end);
+      circuitEl.textContent = race.circuit + ' — ' + race.round + ' — ' + fmtDate(raceEnd);
+
+      if (isLive) {
+        // EN DIRECT !
+        tagEl.textContent = '🔴 EN DIRECT';
+        tagEl.style.color = '#e10600';
+        document.getElementById('cd-days').textContent = '🏎️';
+        document.getElementById('cd-hours').textContent = '';
+        document.getElementById('cd-mins').textContent = '';
+        document.getElementById('cd-secs').textContent = '';
+        // Hide separators
+        timerEl.querySelectorAll('.cd-sep').forEach(s => s.style.display = 'none');
+        timerEl.querySelectorAll('.cd-label').forEach(s => s.style.display = 'none');
+        // Show only one block with EN DIRECT
+        const blocks = timerEl.querySelectorAll('.cd-block');
+        blocks[0].querySelector('.cd-num').textContent = 'EN';
+        blocks[0].querySelector('.cd-num').style.fontSize = '2rem';
+        blocks[1].querySelector('.cd-num').textContent = 'DIRECT';
+        blocks[1].querySelector('.cd-num').style.fontSize = '2rem';
+        blocks[2].querySelector('.cd-num').textContent = '';
+        blocks[3].querySelector('.cd-num').textContent = '';
+      } else {
+        // Countdown vers la course
+        tagEl.textContent = 'PROCHAINE COURSE';
+        tagEl.style.color = '';
+        timerEl.querySelectorAll('.cd-sep').forEach(s => s.style.display = '');
+        timerEl.querySelectorAll('.cd-label').forEach(s => s.style.display = '');
+        timerEl.querySelectorAll('.cd-num').forEach(s => s.style.fontSize = '');
+
+        const raceStart = new Date(race.start + 'T00:00:00');
+        const diff = raceStart - now;
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+        document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+        document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+        document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+      }
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);

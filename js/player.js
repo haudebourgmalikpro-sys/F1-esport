@@ -1,5 +1,6 @@
 // ===========================
 //  F1 MUSIC PLAYER
+//  Persists across page navigation
 // ===========================
 
 (function() {
@@ -17,9 +18,37 @@
   let autoOpenTimer = null;
   let hasStarted = false;
 
+  // --- SESSION STORAGE KEYS ---
+  const SS_INDEX = 'f1p_index';
+  const SS_TIME  = 'f1p_time';
+  const SS_VOL   = 'f1p_vol';
+  const SS_PLAY  = 'f1p_playing';
+  const SS_MUTED = 'f1p_muted';
+
+  // --- RESTORE STATE FROM SESSION ---
+  function getSavedState() {
+    return {
+      index:   parseInt(sessionStorage.getItem(SS_INDEX)) || 0,
+      time:    parseFloat(sessionStorage.getItem(SS_TIME)) || 0,
+      vol:     parseFloat(sessionStorage.getItem(SS_VOL) ?? '0.2'),
+      playing: sessionStorage.getItem(SS_PLAY) !== 'false', // default true
+      muted:   sessionStorage.getItem(SS_MUTED) === 'true',
+    };
+  }
+
+  // --- SAVE STATE TO SESSION ---
+  function saveState() {
+    sessionStorage.setItem(SS_INDEX, currentIndex);
+    sessionStorage.setItem(SS_TIME, audio.currentTime || 0);
+    sessionStorage.setItem(SS_VOL, audio.volume);
+    sessionStorage.setItem(SS_PLAY, !audio.paused);
+    sessionStorage.setItem(SS_MUTED, audio.volume === 0);
+  }
+
   // --- CREATE AUDIO ---
   const audio = new Audio();
-  audio.volume = 0.2;
+  const saved = getSavedState();
+  audio.volume = saved.vol;
 
   // --- INJECT HTML ---
   const playerHTML = `
@@ -62,7 +91,7 @@
 
         <div class="player-volume">
           <span class="vol-icon" id="volIcon">🔊</span>
-          <input type="range" class="player-volbar" id="playerVolbar" min="0" max="100" value="20" />
+          <input type="range" class="player-volbar" id="playerVolbar" min="0" max="100" value="${Math.round(saved.vol * 100)}" />
         </div>
       </div>
     </div>
@@ -95,24 +124,28 @@
     return m + ':' + String(sec).padStart(2, '0');
   }
 
+  // --- UPDATE VOL ICON ---
+  function updateVolIcon() {
+    const v = audio.volume;
+    if (v === 0) volIcon.textContent = '🔇';
+    else if (v < 0.4) volIcon.textContent = '🔉';
+    else volIcon.textContent = '🔊';
+  }
+
   // --- OPEN PANEL BRIEFLY (for auto track change) ---
   function flashPanel() {
-    // Show toast
     if (toastTimer) clearTimeout(toastTimer);
     toast.classList.add('show');
 
-    // Also open the panel
     if (!isOpen) {
       isOpen = true;
       panel.classList.add('open');
       tab.classList.add('active');
     }
 
-    // Close both after 3s
     if (autoOpenTimer) clearTimeout(autoOpenTimer);
     autoOpenTimer = setTimeout(() => {
       toast.classList.remove('show');
-      // Close panel only if user didn't interact
       isOpen = false;
       panel.classList.remove('open');
       tab.classList.remove('active');
@@ -120,7 +153,7 @@
   }
 
   // --- LOAD TRACK ---
-  function loadTrack(index, autoplay, isAutoChange) {
+  function loadTrack(index, autoplay, isAutoChange, resumeTime) {
     currentIndex = index;
     const track = PLAYLIST[currentIndex];
     audio.src = track.src;
@@ -132,11 +165,18 @@
     currentEl.textContent = '0:00';
     durationEl.textContent = '0:00';
 
+    // If resuming from a saved position, set time once metadata loads
+    if (resumeTime && resumeTime > 0) {
+      audio.addEventListener('loadedmetadata', function onMeta() {
+        audio.currentTime = resumeTime;
+        audio.removeEventListener('loadedmetadata', onMeta);
+      });
+    }
+
     if (autoplay) {
       audio.play().then(() => {
         playBtn.textContent = '⏸';
         tab.classList.add('playing');
-        // If auto track change (ended -> next), flash the panel open
         if (isAutoChange) {
           flashPanel();
         }
@@ -154,11 +194,9 @@
     audio.play().then(() => {
       playBtn.textContent = '⏸';
       tab.classList.add('playing');
-      // Show toast on first real play
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 3000);
     }).catch(() => {});
-    // Remove listeners once started
     document.removeEventListener('click', forcePlay);
     document.removeEventListener('keydown', forcePlay);
     document.removeEventListener('scroll', forcePlay);
@@ -167,7 +205,6 @@
 
   // --- TOGGLE PANEL ---
   tab.addEventListener('click', (e) => {
-    // Cancel any auto-close timer if user clicks
     if (autoOpenTimer) { clearTimeout(autoOpenTimer); autoOpenTimer = null; }
     isOpen = !isOpen;
     panel.classList.toggle('open', isOpen);
@@ -229,7 +266,7 @@
   // --- AUTO NEXT (track ended) ---
   audio.addEventListener('ended', () => {
     const idx = (currentIndex + 1) % PLAYLIST.length;
-    loadTrack(idx, true, true); // isAutoChange = true → flash panel
+    loadTrack(idx, true, true);
   });
 
   // --- VOLUME ---
@@ -237,13 +274,6 @@
     audio.volume = volbar.value / 100;
     updateVolIcon();
   });
-
-  function updateVolIcon() {
-    const v = audio.volume;
-    if (v === 0) volIcon.textContent = '🔇';
-    else if (v < 0.4) volIcon.textContent = '🔉';
-    else volIcon.textContent = '🔊';
-  }
 
   volIcon.addEventListener('click', () => {
     if (audio.volume > 0) {
@@ -257,23 +287,52 @@
     updateVolIcon();
   });
 
-  // --- INIT ---
-  // Load first track and attempt autoplay immediately
-  loadTrack(0, true, false);
+  // --- SAVE STATE BEFORE LEAVING PAGE ---
+  window.addEventListener('beforeunload', saveState);
+  // Also save periodically in case of crash
+  setInterval(saveState, 2000);
 
-  // If browser blocks autoplay, start on first user interaction
-  audio.play().then(() => {
-    hasStarted = true;
-    playBtn.textContent = '⏸';
-    tab.classList.add('playing');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
-  }).catch(() => {
-    // Autoplay blocked — listen for any user interaction to start
-    document.addEventListener('click', forcePlay, { once: false });
-    document.addEventListener('keydown', forcePlay, { once: false });
-    document.addEventListener('scroll', forcePlay, { once: false });
-    document.addEventListener('touchstart', forcePlay, { once: false });
-  });
+  // --- INIT: RESTORE OR START FRESH ---
+  const hasSavedSession = sessionStorage.getItem(SS_INDEX) !== null;
+
+  if (hasSavedSession) {
+    // Restore where we left off
+    const shouldPlay = saved.playing;
+    loadTrack(saved.index, shouldPlay, false, saved.time);
+    updateVolIcon();
+
+    if (shouldPlay) {
+      // Try to auto-resume, fallback to user interaction
+      audio.play().then(() => {
+        hasStarted = true;
+        playBtn.textContent = '⏸';
+        tab.classList.add('playing');
+      }).catch(() => {
+        document.addEventListener('click', forcePlay, { once: false });
+        document.addEventListener('keydown', forcePlay, { once: false });
+        document.addEventListener('scroll', forcePlay, { once: false });
+        document.addEventListener('touchstart', forcePlay, { once: false });
+      });
+    } else {
+      playBtn.textContent = '▶';
+      tab.classList.remove('playing');
+    }
+  } else {
+    // First visit — start from beginning
+    loadTrack(0, true, false);
+
+    audio.play().then(() => {
+      hasStarted = true;
+      playBtn.textContent = '⏸';
+      tab.classList.add('playing');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }).catch(() => {
+      document.addEventListener('click', forcePlay, { once: false });
+      document.addEventListener('keydown', forcePlay, { once: false });
+      document.addEventListener('scroll', forcePlay, { once: false });
+      document.addEventListener('touchstart', forcePlay, { once: false });
+    });
+  }
 
 })();
