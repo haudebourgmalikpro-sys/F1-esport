@@ -18,7 +18,10 @@
       "Bash(sed -i 's/font-size: 0\\\\.75rem/font-size: 0.9rem/g' style.css pages.css team.css)",
       "Bash(do sed:*)",
       "Bash(echo \"$f: already has Pilotes in footer or nav\")",
-      "Bash(echo \"$f: MISSING\")"
+      "Bash(echo \"$f: MISSING\")",
+      "WebFetch(domain:www.formula1.com)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where gh:*)"
     ]
   }
 }

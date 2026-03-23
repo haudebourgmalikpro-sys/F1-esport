@@ -1,0 +1,11 @@
+=============================================
+  COLLABORATIONS / PARTENARIATS
+  Format recommandé : PNG transparent
+  Taille recommandée : 600x400px
+  Style : Logos ou visuels des partenaires
+=============================================
+
+Ajoute ici les logos/visuels de tes collaborations.
+Nomme-les de manière claire, ex :
+  - partenaire_nom.png
+  - collab_evenement.png

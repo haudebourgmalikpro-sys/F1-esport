@@ -1,0 +1,21 @@
+=============================================
+  VISAGES PILOTES (centré, pour cards/grille)
+  Format recommandé : PNG transparent ou AVIF
+  Taille recommandée : 400x400px (carré)
+  Style : Visage centré, cadré serré, fond transparent
+=============================================
+
+PILOTES CONFIRMÉS :
+  - doma.png          (DOMA #1 — MAKOUTCHE)
+  - tiskeur.png       (TISKEUR #3 — OLAMBS)
+  - yeeet.png         (YEEET #5 — GIGIPRIME)
+  - vs-kf-only.png    (VS-KF ONLY #7 — BMW)
+  - milka.png         (MILKA #9 — BIGFARMA)
+
+PILOTES À CONFIRMER :
+  - pilote_02.png     (#2 — MAKOUTCHE)
+  - pilote_04.png     (#4 — OLAMBS)
+  - pilote_06.png     (#6 — GIGIPRIME)
+  - pilote_08.png     (#8 — BMW)
+  - pilote_10.png     (#10 — BIGFARMA)
+  - pilote_11.png à pilote_22.png (Équipes 6-11)

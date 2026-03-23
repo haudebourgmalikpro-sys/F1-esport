@@ -1,0 +1,32 @@
+=============================================
+  PORTRAITS PILOTES (page detail pilote)
+  Format recommandé : PNG transparent ou AVIF
+  Taille recommandée : 800x1000px minimum
+  Style : Mi-corps ou buste, fond transparent
+=============================================
+
+PILOTES CONFIRMÉS :
+  - doma.png          (DOMA #1 — MAKOUTCHE)
+  - tiskeur.png       (TISKEUR #3 — OLAMBS)
+  - yeeet.png         (YEEET #5 — GIGIPRIME)
+  - vs-kf-only.png    (VS-KF ONLY #7 — BMW)
+  - milka.png         (MILKA #9 — BIGFARMA)
+
+PILOTES À CONFIRMER :
+  - pilote_02.png     (#2 — MAKOUTCHE)
+  - pilote_04.png     (#4 — OLAMBS)
+  - pilote_06.png     (#6 — GIGIPRIME)
+  - pilote_08.png     (#8 — BMW)
+  - pilote_10.png     (#10 — BIGFARMA)
+  - pilote_11.png     (#11 — Équipe 6)
+  - pilote_12.png     (#12 — Équipe 6)
+  - pilote_13.png     (#13 — Équipe 7)
+  - pilote_14.png     (#14 — Équipe 7)
+  - pilote_15.png     (#15 — Équipe 8)
+  - pilote_16.png     (#16 — Équipe 8)
+  - pilote_17.png     (#17 — Équipe 9)
+  - pilote_18.png     (#18 — Équipe 9)
+  - pilote_19.png     (#19 — Équipe 10)
+  - pilote_20.png     (#20 — Équipe 10)
+  - pilote_21.png     (#21 — Équipe 11)
+  - pilote_22.png     (#22 — Équipe 11)

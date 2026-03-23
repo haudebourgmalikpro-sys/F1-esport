@@ -1,0 +1,35 @@
+=============================================
+  DRAPEAUX CIRCUITS (remplace les emoji 🇦🇺)
+  Format recommandé : PNG ou SVG
+  Taille recommandée : 80x60px ou 120x80px
+  Style : Drapeaux pays, ratio 4:3
+=============================================
+
+22 DRAPEAUX REQUIS (1 par circuit) :
+
+  - australie.png     🇦🇺  R01 — Australie
+  - chine.png         🇨🇳  R02 — Chine
+  - japon.png         🇯🇵  R03 — Japon
+  - usa.png           🇺🇸  R04 — Miami (USA)
+  - canada.png        🇨🇦  R05 — Canada
+  - monaco.png        🇲🇨  R06 — Monaco
+  - espagne.png       🇪🇸  R07 — Barcelona-Catalunya
+  - autriche.png      🇦🇹  R08 — Autriche
+  - uk.png            🇬🇧  R09 — Grande-Bretagne
+  - belgique.png      🇧🇪  R10 — Belgique
+  - hongrie.png       🇭🇺  R11 — Hongrie
+  - pays-bas.png      🇳🇱  R12 — Pays-Bas
+  - italie.png        🇮🇹  R13 — Italie
+  - espagne.png       🇪🇸  R14 — Espagne (même drapeau que R07)
+  - azerbaidjan.png   🇦🇿  R15 — Azerbaïdjan
+  - singapour.png     🇸🇬  R16 — Singapour
+  - usa.png           🇺🇸  R17 — États-Unis (même drapeau que R04)
+  - mexique.png       🇲🇽  R18 — Mexique
+  - bresil.png        🇧🇷  R19 — Brésil
+  - usa.png           🇺🇸  R20 — Las Vegas (même drapeau que R04)
+  - qatar.png         🇶🇦  R21 — Qatar
+  - eau.png           🇦🇪  R22 — Abu Dhabi (EAU)
+
+NOTE : USA et Espagne apparaissent plusieurs fois,
+       un seul fichier par pays suffit.
+→ 17 fichiers uniques nécessaires.

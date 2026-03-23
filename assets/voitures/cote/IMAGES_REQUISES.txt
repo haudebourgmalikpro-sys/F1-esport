@@ -1,0 +1,21 @@
+=============================================
+  VOITURES VUE DE CÔTÉ (par écurie)
+  Format recommandé : PNG transparent ou AVIF
+  Taille recommandée : 1600x600px
+  Style : Profil latéral, fond transparent
+=============================================
+
+ÉCURIES CONFIRMÉES :
+  - makoutche.png     (MAKOUTCHE — couleur #E85DA0)
+  - olambs.png        (OLAMBS — couleur #C43030)
+  - gigiprime.png     (GIGIPRIME — couleur #E87B20)
+  - bmw.png           (BMW — couleur #D4243B)
+  - bigfarma.png      (BIGFARMA — couleur #30B860)
+
+ÉCURIES À CONFIRMER :
+  - equipe_06.png     (Équipe 6)
+  - equipe_07.png     (Équipe 7)
+  - equipe_08.png     (Équipe 8)
+  - equipe_09.png     (Équipe 9)
+  - equipe_10.png     (Équipe 10)
+  - equipe_11.png     (Équipe 11)

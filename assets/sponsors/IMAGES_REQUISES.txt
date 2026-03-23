@@ -1,0 +1,12 @@
+=============================================
+  SPONSORS
+  Format recommandé : PNG transparent ou SVG
+  Taille recommandée : 400x200px
+  Style : Logos sponsors, fond transparent
+=============================================
+
+Ajoute ici les logos de tes sponsors.
+Nomme-les de manière claire, ex :
+  - sponsor_nom.png
+  - sponsor_principal.png
+  - sponsor_titre.svg

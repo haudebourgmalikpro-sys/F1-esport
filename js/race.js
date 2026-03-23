@@ -1,88 +1,158 @@
 /* ===== RACE DATA ===== */
 const RACES = {
   '01': {
-    round: '01', flag: '\u{1F1E6}\u{1F1FA}', country: 'AUSTRALIE', gp: "Grand Prix d'Australie",
-    circuit: 'Albert Park, Melbourne', dates: '01/05/2026 \u2014 03/05/2026',
-    circuitImg: 'assets/circuits/australia.png',
+    round: '01', flag: '🇦🇺', country: 'AUSTRALIE', gp: "Grand Prix d'Australie",
+    circuit: 'Albert Park, Melbourne', dates: '01/05/2026 — 03/05/2026',
+    circuitImg: 'assets/circuits/australie.avif',
     length: '5.278 km', firstGP: '1996', laps: '58',
-    fastestLap: "1'19.813 \u2014 C. Leclerc (2024)", distance: '306.124 km'
+    fastestLap: "1'19.813 — C. Leclerc (2024)", distance: '306.124 km'
   },
   '02': {
-    round: '02', flag: '\u{1F1E8}\u{1F1F3}', country: 'CHINE', gp: 'Grand Prix de Chine',
-    circuit: 'Shanghai International Circuit', dates: '08/05/2026 \u2014 10/05/2026',
-    circuitImg: 'assets/circuits/china.png',
+    round: '02', flag: '🇨🇳', country: 'CHINE', gp: 'Grand Prix de Chine',
+    circuit: 'Shanghai International Circuit', dates: '08/05/2026 — 10/05/2026',
+    circuitImg: 'assets/circuits/chine.avif',
     length: '5.451 km', firstGP: '2004', laps: '56',
-    fastestLap: "1'32.238 \u2014 M. Schumacher (2004)", distance: '305.066 km'
+    fastestLap: "1'32.238 — M. Schumacher (2004)", distance: '305.066 km'
   },
   '03': {
-    round: '03', flag: '\u{1F1EF}\u{1F1F5}', country: 'JAPON', gp: 'Grand Prix du Japon',
-    circuit: 'Suzuka International Racing Course', dates: '22/05/2026 \u2014 24/05/2026',
-    circuitImg: 'assets/circuits/japan.png',
+    round: '03', flag: '🇯🇵', country: 'JAPON', gp: 'Grand Prix du Japon',
+    circuit: 'Suzuka International Racing Course', dates: '22/05/2026 — 24/05/2026',
+    circuitImg: 'assets/circuits/japon.avif',
     length: '5.807 km', firstGP: '1987', laps: '53',
-    fastestLap: "1'30.983 \u2014 L. Hamilton (2019)", distance: '307.471 km'
+    fastestLap: "1'30.983 — L. Hamilton (2019)", distance: '307.471 km'
   },
   '04': {
-    round: '04', flag: '\u{1F1E7}\u{1F1ED}', country: 'BAHRE\u00cfN', gp: 'Grand Prix de Bahre\u00efn',
-    circuit: 'Circuit International de Bahre\u00efn, Sakhir', dates: '29/05/2026 \u2014 31/05/2026',
-    circuitImg: 'assets/circuits/bahrain.png',
-    length: '5.412 km', firstGP: '2004', laps: '57',
-    fastestLap: "1'31.447 \u2014 P. de la Rosa (2005)", distance: '308.238 km'
+    round: '04', flag: '🇺🇸', country: 'MIAMI', gp: 'Grand Prix de Miami',
+    circuit: 'Miami International Autodrome', dates: '29/05/2026 — 31/05/2026',
+    circuitImg: 'assets/circuits/miami.avif',
+    length: '5.412 km', firstGP: '2022', laps: '57',
+    fastestLap: "1'29.708 — M. Verstappen (2023)", distance: '308.326 km'
   },
   '05': {
-    round: '05', flag: '\u{1F1F8}\u{1F1E6}', country: 'ARABIE SAOUDITE', gp: "Grand Prix d'Arabie Saoudite",
-    circuit: 'Circuit de la Corniche, Jeddah', dates: '05/06/2026 \u2014 07/06/2026',
-    circuitImg: 'assets/circuits/saudi.png',
-    length: '6.174 km', firstGP: '2021', laps: '50',
-    fastestLap: "1'30.734 \u2014 L. Hamilton (2021)", distance: '308.450 km'
+    round: '05', flag: '🇨🇦', country: 'CANADA', gp: 'Grand Prix du Canada',
+    circuit: 'Circuit Gilles Villeneuve, Montréal', dates: '05/06/2026 — 07/06/2026',
+    circuitImg: 'assets/circuits/canada.avif',
+    length: '4.361 km', firstGP: '1978', laps: '70',
+    fastestLap: "1'13.078 — V. Bottas (2019)", distance: '305.270 km'
   },
   '06': {
-    round: '06', flag: '\u{1F1FA}\u{1F1F8}', country: 'MIAMI', gp: 'Grand Prix de Miami',
-    circuit: 'Miami International Autodrome', dates: '19/06/2026 \u2014 21/06/2026',
-    circuitImg: 'assets/circuits/miami.png',
-    length: '5.412 km', firstGP: '2022', laps: '57',
-    fastestLap: "1'29.708 \u2014 M. Verstappen (2023)", distance: '308.326 km'
+    round: '06', flag: '🇲🇨', country: 'MONACO', gp: 'Grand Prix de Monaco',
+    circuit: 'Circuit de Monaco, Monte Carlo', dates: '12/06/2026 — 14/06/2026',
+    circuitImg: 'assets/circuits/monaco.avif',
+    length: '3.337 km', firstGP: '1950', laps: '78',
+    fastestLap: "1'12.909 — L. Hamilton (2021)", distance: '260.286 km'
   },
   '07': {
-    round: '07', flag: '\u{1F1EE}\u{1F1F9}', country: '\u00c9MILIE-ROMAGNE', gp: "Grand Prix d'\u00c9milie-Romagne",
-    circuit: 'Autodromo Enzo e Dino Ferrari, Imola', dates: '26/06/2026 \u2014 28/06/2026',
-    circuitImg: 'assets/circuits/imola.png',
-    length: '4.909 km', firstGP: '1980', laps: '63',
-    fastestLap: "1'15.484 \u2014 L. Hamilton (2020)", distance: '309.049 km'
+    round: '07', flag: '🇪🇸', country: 'BARCELONA-CATALUNYA', gp: 'Grand Prix de Barcelona-Catalunya',
+    circuit: 'Circuit de Barcelona-Catalunya', dates: '26/06/2026 — 28/06/2026',
+    circuitImg: 'assets/circuits/barcelon.avif',
+    length: '4.657 km', firstGP: '1991', laps: '66',
+    fastestLap: "1'16.330 — M. Verstappen (2023)", distance: '307.236 km'
   },
   '08': {
-    round: '08', flag: '\u{1F1F2}\u{1F1E8}', country: 'MONACO', gp: 'Grand Prix de Monaco',
-    circuit: 'Circuit de Monaco, Monte Carlo', dates: '03/07/2026 \u2014 05/07/2026',
-    circuitImg: 'assets/circuits/monaco.png',
-    length: '3.337 km', firstGP: '1950', laps: '78',
-    fastestLap: "1'12.909 \u2014 L. Hamilton (2021)", distance: '260.286 km'
+    round: '08', flag: '🇦🇹', country: 'AUTRICHE', gp: "Grand Prix d'Autriche",
+    circuit: 'Red Bull Ring, Spielberg', dates: '03/07/2026 — 05/07/2026',
+    circuitImg: 'assets/circuits/autriche.avif',
+    length: '4.318 km', firstGP: '1970', laps: '71',
+    fastestLap: "1'05.619 — C. Sainz (2020)", distance: '306.452 km'
   },
   '09': {
-    round: '09', flag: '\u{1F1EA}\u{1F1F8}', country: 'ESPAGNE', gp: "Grand Prix d'Espagne",
-    circuit: 'Circuit de Barcelona-Catalunya', dates: '10/07/2026 \u2014 12/07/2026',
-    circuitImg: 'assets/circuits/spain.png',
-    length: '4.657 km', firstGP: '1991', laps: '66',
-    fastestLap: "1'16.330 \u2014 M. Verstappen (2023)", distance: '307.236 km'
+    round: '09', flag: '🇬🇧', country: 'GRANDE-BRETAGNE', gp: 'Grand Prix de Grande-Bretagne',
+    circuit: 'Silverstone Circuit', dates: '10/07/2026 — 12/07/2026',
+    circuitImg: 'assets/circuits/british.avif',
+    length: '5.891 km', firstGP: '1950', laps: '52',
+    fastestLap: "1'27.097 — M. Verstappen (2020)", distance: '306.198 km'
   },
   '10': {
-    round: '10', flag: '\u{1F1E8}\u{1F1E6}', country: 'CANADA', gp: 'Grand Prix du Canada',
-    circuit: 'Circuit Gilles Villeneuve, Montr\u00e9al', dates: '24/07/2026 \u2014 26/07/2026',
-    circuitImg: 'assets/circuits/canada.png',
-    length: '4.361 km', firstGP: '1978', laps: '70',
-    fastestLap: "1'13.078 \u2014 V. Bottas (2019)", distance: '305.270 km'
+    round: '10', flag: '🇧🇪', country: 'BELGIQUE', gp: 'Grand Prix de Belgique',
+    circuit: 'Circuit de Spa-Francorchamps', dates: '17/07/2026 — 19/07/2026',
+    circuitImg: 'assets/circuits/belgique.avif',
+    length: '7.004 km', firstGP: '1950', laps: '44',
+    fastestLap: "1'46.286 — V. Bottas (2018)", distance: '308.052 km'
   },
   '11': {
-    round: '11', flag: '\u{1F1E6}\u{1F1F9}', country: 'AUTRICHE', gp: "Grand Prix d'Autriche",
-    circuit: 'Red Bull Ring, Spielberg', dates: '31/07/2026 \u2014 02/08/2026',
-    circuitImg: 'assets/circuits/austria.png',
-    length: '4.318 km', firstGP: '1970', laps: '71',
-    fastestLap: "1'05.619 \u2014 C. Sainz (2020)", distance: '306.452 km'
+    round: '11', flag: '🇭🇺', country: 'HONGRIE', gp: 'Grand Prix de Hongrie',
+    circuit: 'Hungaroring, Budapest', dates: '24/07/2026 — 26/07/2026',
+    circuitImg: 'assets/circuits/hongrie.avif',
+    length: '4.381 km', firstGP: '1986', laps: '70',
+    fastestLap: "1'16.627 — L. Hamilton (2020)", distance: '306.630 km'
   },
   '12': {
-    round: '12', flag: '\u{1F1EC}\u{1F1E7}', country: 'GRANDE-BRETAGNE', gp: 'Grand Prix de Grande-Bretagne',
-    circuit: 'Silverstone Circuit', dates: '07/08/2026 \u2014 09/08/2026',
-    circuitImg: 'assets/circuits/silverstone.png',
-    length: '5.891 km', firstGP: '1950', laps: '52',
-    fastestLap: "1'27.097 \u2014 M. Verstappen (2020)", distance: '306.198 km'
+    round: '12', flag: '🇳🇱', country: 'PAYS-BAS', gp: 'Grand Prix des Pays-Bas',
+    circuit: 'Circuit de Zandvoort', dates: '21/08/2026 — 23/08/2026',
+    circuitImg: 'assets/circuits/dutch.avif',
+    length: '4.259 km', firstGP: '1952', laps: '72',
+    fastestLap: "1'11.097 — L. Hamilton (2023)", distance: '306.587 km'
+  },
+  '13': {
+    round: '13', flag: '🇮🇹', country: 'ITALIE', gp: "Grand Prix d'Italie",
+    circuit: 'Autodromo Nazionale di Monza', dates: '04/09/2026 — 06/09/2026',
+    circuitImg: 'assets/circuits/italian.avif',
+    length: '5.793 km', firstGP: '1950', laps: '53',
+    fastestLap: "1'21.046 — R. Barrichello (2004)", distance: '306.720 km'
+  },
+  '14': {
+    round: '14', flag: '🇪🇸', country: 'ESPAGNE', gp: "Grand Prix d'Espagne",
+    circuit: 'Circuit de Barcelona-Catalunya', dates: '11/09/2026 — 13/09/2026',
+    circuitImg: 'assets/circuits/spanish.avif',
+    length: '4.657 km', firstGP: '1991', laps: '66',
+    fastestLap: "1'16.330 — M. Verstappen (2023)", distance: '307.236 km'
+  },
+  '15': {
+    round: '15', flag: '🇦🇿', country: 'AZERBAÏDJAN', gp: "Grand Prix d'Azerbaïdjan",
+    circuit: 'Circuit urbain de Bakou', dates: '24/09/2026 — 26/09/2026',
+    circuitImg: 'assets/circuits/azerbidjan.avif',
+    length: '6.003 km', firstGP: '2017', laps: '51',
+    fastestLap: "1'43.009 — C. Leclerc (2019)", distance: '306.049 km'
+  },
+  '16': {
+    round: '16', flag: '🇸🇬', country: 'SINGAPOUR', gp: 'Grand Prix de Singapour',
+    circuit: 'Circuit urbain de Marina Bay', dates: '09/10/2026 — 11/10/2026',
+    circuitImg: 'assets/circuits/singapour.avif',
+    length: '4.940 km', firstGP: '2008', laps: '62',
+    fastestLap: "1'35.867 — L. Hamilton (2023)", distance: '306.143 km'
+  },
+  '17': {
+    round: '17', flag: '🇺🇸', country: 'ÉTATS-UNIS', gp: "Grand Prix des États-Unis",
+    circuit: 'Circuit of the Americas, Austin', dates: '23/10/2026 — 25/10/2026',
+    circuitImg: 'assets/circuits/etat unis.avif',
+    length: '5.513 km', firstGP: '2012', laps: '56',
+    fastestLap: "1'36.169 — C. Leclerc (2019)", distance: '308.405 km'
+  },
+  '18': {
+    round: '18', flag: '🇲🇽', country: 'MEXIQUE', gp: 'Grand Prix du Mexique',
+    circuit: 'Autódromo Hermanos Rodríguez, Mexico', dates: '30/10/2026 — 01/11/2026',
+    circuitImg: 'assets/circuits/mexico.avif',
+    length: '4.304 km', firstGP: '1963', laps: '71',
+    fastestLap: "1'17.774 — V. Bottas (2021)", distance: '305.354 km'
+  },
+  '19': {
+    round: '19', flag: '🇧🇷', country: 'BRÉSIL', gp: 'Grand Prix de São Paulo',
+    circuit: 'Autódromo José Carlos Pace, Interlagos', dates: '06/11/2026 — 08/11/2026',
+    circuitImg: 'assets/circuits/sao paulo.avif',
+    length: '4.309 km', firstGP: '1973', laps: '71',
+    fastestLap: "1'10.540 — V. Bottas (2018)", distance: '305.879 km'
+  },
+  '20': {
+    round: '20', flag: '🇺🇸', country: 'LAS VEGAS', gp: 'Grand Prix de Las Vegas',
+    circuit: 'Las Vegas Strip Circuit', dates: '19/11/2026 — 21/11/2026',
+    circuitImg: 'assets/circuits/las vegas.avif',
+    length: '6.201 km', firstGP: '2023', laps: '50',
+    fastestLap: "1'35.490 — O. Piastri (2023)", distance: '310.050 km'
+  },
+  '21': {
+    round: '21', flag: '🇶🇦', country: 'QATAR', gp: 'Grand Prix du Qatar',
+    circuit: 'Circuit International de Lusail', dates: '27/11/2026 — 29/11/2026',
+    circuitImg: 'assets/circuits/quatar.avif',
+    length: '5.380 km', firstGP: '2021', laps: '57',
+    fastestLap: "1'24.319 — M. Verstappen (2023)", distance: '306.660 km'
+  },
+  '22': {
+    round: '22', flag: '🇦🇪', country: 'ABU DHABI', gp: "Grand Prix d'Abu Dhabi",
+    circuit: 'Circuit de Yas Marina', dates: '04/12/2026 — 06/12/2026',
+    circuitImg: 'assets/circuits/abu dhabi.avif',
+    length: '5.281 km', firstGP: '2009', laps: '58',
+    fastestLap: "1'26.103 — M. Verstappen (2021)", distance: '306.183 km'
   }
 };
 
@@ -109,10 +179,10 @@ const RACES = {
     resultsRows += `
       <tr>
         <td>${i}</td>
-        <td>\u2014</td>
-        <td>\u2014</td>
-        <td>\u2014</td>
-        <td>\u2014</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
       </tr>`;
   }
 
@@ -176,7 +246,7 @@ const RACES = {
     <!-- RESULTS -->
     <section class="results-section">
       <div class="section-container">
-        <div class="section-tag">R\u00c9SULTATS</div>
+        <div class="section-tag">RÉSULTATS</div>
         <h2 class="section-title">Classement de la course</h2>
         <div class="results-table-wrap">
           <table class="results-table">
@@ -184,7 +254,7 @@ const RACES = {
               <tr>
                 <th>Pos</th>
                 <th>Pilote</th>
-                <th>\u00c9curie</th>
+                <th>Écurie</th>
                 <th>Temps</th>
                 <th>Points</th>
               </tr>
@@ -201,7 +271,7 @@ const RACES = {
     <section class="watch-section">
       <div class="section-container">
         <div class="section-tag">SUIVRE LA COURSE</div>
-        <h2 class="section-title">O\u00f9 regarder</h2>
+        <h2 class="section-title">Où regarder</h2>
         <div class="watch-grid">
           <a href="#" class="watch-card" target="_blank" rel="noopener">
             <div class="watch-card-icon">
@@ -227,7 +297,7 @@ const RACES = {
         <div class="section-tag">TEMPS FORTS</div>
         <h2 class="section-title">Highlights</h2>
         <div class="highlights-placeholder">
-          <p>Les temps forts seront disponibles apr\u00e8s la course.</p>
+          <p>Les temps forts seront disponibles après la course.</p>
         </div>
       </div>
     </section>
